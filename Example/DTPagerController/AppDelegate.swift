@@ -25,10 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: pagerController)
         navigationController.navigationBar.isTranslucent = false
 
-        let tabbarController = UITabBarController()
-        tabbarController.viewControllers = [navigationController]
+        //let tabbarController = UITabBarController()
+        //tabbarController.viewControllers = [navigationController]
 
-        window?.rootViewController = tabbarController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
         return true
