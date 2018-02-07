@@ -30,7 +30,7 @@ open class DTPagerController: UIViewController, UIScrollViewDelegate {
 
     open fileprivate(set) lazy var scrollLiner: UIView = {
         let bar = UIView()
-        bar.backgroundColor = UIColor.gray
+        bar.backgroundColor = UIColor.clear
         return bar
     }()
 
