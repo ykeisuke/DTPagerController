@@ -28,6 +28,12 @@ open class DTPagerController: UIViewController, UIScrollViewDelegate {
         return bar
     }()
 
+    open fileprivate(set) lazy var scrollLiner: UIView = {
+        let bar = UIView()
+        bar.backgroundColor = UIColor.gray
+        return bar
+    }()
+
     /// Delegate
     @objc open weak var delegate: DTPagerControllerDelegate?
 
@@ -198,6 +204,7 @@ open class DTPagerController: UIViewController, UIScrollViewDelegate {
         // Add subviews
         view.addSubview(pageScrollView)
         view.addSubview(pageSegmentedControl)
+        view.addSubview(scrollLiner)
         view.addSubview(scrollIndicator)
     }
 
@@ -222,6 +229,10 @@ open class DTPagerController: UIViewController, UIScrollViewDelegate {
 
         // Update scroll indicator's vertical position
         setUpScrollIndicator()
+
+        // Update
+        setUpScrollLiner()
+
     }
 
     open override func viewWillAppear(_ animated: Bool) {
@@ -479,6 +490,15 @@ extension DTPagerController {
         scrollIndicator.frame.origin.y = segmentedControlHeight - scrollIndicatorHeight
         scrollIndicator.frame.origin.x = scrollIndicator.frame.width * CGFloat(selectedPageIndex)
     }
+
+    func setUpScrollLiner() {
+        if viewControllers.count > 0 {
+            scrollLiner.frame.size = CGSize(width: view.bounds.width, height: scrollIndicatorHeight)
+        }
+        scrollLiner.frame.origin.y = segmentedControlHeight - scrollIndicatorHeight
+        scrollLiner.frame.origin.x = 0
+    }
+
 }
 
 //MARK: Observers
