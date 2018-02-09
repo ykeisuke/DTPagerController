@@ -10,8 +10,13 @@ import UIKit
 import DTPagerController
 
 class PagerController: DTPagerController {
+
     init() {
         super.init(viewControllers: [])
+
+        // Change Status bar font color without NavigationBar and Tabbar.
+        self.statusBarStyle = .lightContent
+
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -58,7 +63,7 @@ class PagerController: DTPagerController {
 
         // Change scroll placeholder color
         self.scrollLiner.backgroundColor = UIColor.gray
-        
+
         // Do any additional setup after loading the view.
     }
 
