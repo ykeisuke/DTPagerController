@@ -47,6 +47,9 @@ self.scrollIndicator.backgroundColor = UIColor.black
 
 // Change scroll placeholder color
 self.scrollLiner.backgroundColor = UIColor.gray
+
+// Change Status bar font color
+self.statusBarStyle = .lightContent
 ```
 
 ## Example
