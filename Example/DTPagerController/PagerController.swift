@@ -56,6 +56,9 @@ class PagerController: DTPagerController {
         // Change scroll indicator color
         self.scrollIndicator.backgroundColor = UIColor.black
 
+        // Change scroll placeholder color
+        self.scrollLiner.backgroundColor = UIColor.gray
+        
         // Do any additional setup after loading the view.
     }
 
